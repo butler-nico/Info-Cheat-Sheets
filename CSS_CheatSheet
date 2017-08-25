@@ -1,0 +1,157 @@
+
+/* Use JSON for CSS */
+
+/* Inline, Embedded, External CSS */
+
+/*Inline CSS*/
+<p style="color:white; background-color:gray;">
+    This is an example of inline styling. 
+</p>
+
+/*  Embedded/Internal CSS*/
+<html>
+   <head>
+      <style>
+      p {
+         color:white;
+         background-color:gray;
+      }
+      </style>
+   </head>
+   <body>
+      <p>This is my first paragraph. </p>
+      <p>This is my second paragraph. </p>
+   </body>
+</html>
+
+/*External CSS*/
+The HTML:
+<head>
+   <link rel="stylesheet" href="example.css">
+</head>
+<body>
+   <p>This is my first paragraph.</p>
+   <p>This is my second paragraph. </p>
+   <p>This is my third paragraph. </p>
+</body>
+
+        The CSS:
+        p {
+           color:white;
+           background-color:gray;
+        }
+
+/*CSS RULES AND SELECTORS*/
+
+<!--CSS Syntax:-->
+h1 { color: orange; } <!--includes slector, property and value-->
+
+<!--Type slectors:-->
+p {
+   color: red;
+   font-size:130%;
+}
+
+/*id and class Selectors*/
+The HTML:
+<div id="intro">	<!--ids can only be applied once per page-->
+   <p> This paragraph is in the intro section.</p>
+</div>
+<p> This paragraph is not in the intro section.</p>
+
+	The CSS:
+			#intro {
+			color: white;
+			background-color: gray;
+			}
+
+The HTML:
+<div>
+   <p class="first">This is a paragraph</p>
+   <p> This is the second paragraph. </p>
+</div>
+<p class="first"> This is not in the intro section</p>
+<p> The second paragraph is not in the intro section. </p>
+
+	The CSS: 
+			.first {font-size: 200%;}
+
+/* Descendant Selectors */
+The HTML: <!--select elements that are descendants of another element-->
+<div id="intro">
+   <p class="first">This is a <em> paragraph.</em></p>
+   <p> This is the second paragraph. </p>
+</div>
+<p class="first"> This is not in the intro section.</p>
+<p> The second paragraph is not in the intro section. </p>
+
+		The CSS
+			#intro .first em {
+		   color: pink; 
+		   background-color:gray;
+		}
+
+/* CSS comments */
+
+p { 
+  color: green; 
+  /* This is a comment */
+  font-size: 150%;
+}
+
+/* Style Cascade and Inheritance */
+The three main sources of style information that form a cascade are:
+
+- The stylesheet created by the author of the page
+- The browser's default styles
+- Styles specified by the user
+
+/* inheritance: p is child element and body is parent*/
+<html>
+   <head>
+      <style>
+      body {
+         color: green;
+         font-family: Arial;
+      }
+     </style>
+   </head>
+   <body>       
+      <p>
+      This is a text inside the paragraph. 
+      </p>
+   </body>
+</html>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
