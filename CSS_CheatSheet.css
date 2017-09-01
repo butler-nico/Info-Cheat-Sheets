@@ -1,0 +1,670 @@
+
+/* Use JSON for CSS */
+
+/* Inline, Embedded, External CSS */
+
+/*Inline CSS*/
+<p style="color:white; background-color:gray;">
+    This is an example of inline styling. 
+</p>
+
+/*  Embedded/Internal CSS*/
+<html>
+   <head>
+      <style>
+      p {
+         color:white;
+         background-color:gray;
+      }
+      </style>
+   </head>
+   <body>
+      <p>This is my first paragraph. </p>
+      <p>This is my second paragraph. </p>
+   </body>
+</html>
+
+/*External CSS*/
+The HTML:
+<head>
+   <link rel="stylesheet" href="example.css">
+</head>
+<body>
+   <p>This is my first paragraph.</p>
+   <p>This is my second paragraph. </p>
+   <p>This is my third paragraph. </p>
+</body>
+
+        The CSS:
+        p {
+           color:white;
+           background-color:gray;
+        }
+
+/*CSS RULES AND SELECTORS*/
+
+<!--CSS Syntax:-->
+h1 { color: orange; } <!--includes slector, property and value-->
+
+<!--Type slectors:-->
+p {
+   color: red;
+   font-size:130%;
+}
+
+/*id and class Selectors*/
+The HTML:
+<div id="intro">	<!--ids can only be applied once per page-->
+   <p> This paragraph is in the intro section.</p>
+</div>
+<p> This paragraph is not in the intro section.</p>
+
+		The CSS:
+				#intro {
+				color: white;
+				background-color: gray;
+				}
+
+The HTML:
+<div>
+   <p class="first">This is a paragraph</p>
+   <p> This is the second paragraph. </p>
+</div>
+<p class="first"> This is not in the intro section</p>
+<p> The second paragraph is not in the intro section. </p>
+
+	The CSS: 
+			.first {font-size: 200%;}
+
+/* Descendant Selectors */
+The HTML: <!--select elements that are descendants of another element-->
+<div id="intro">
+   <p class="first">This is a <em> paragraph.</em></p>
+   <p> This is the second paragraph. </p>
+</div>
+<p class="first"> This is not in the intro section.</p>
+<p> The second paragraph is not in the intro section. </p>
+
+		The CSS
+			#intro .first em {
+		   color: pink; 
+		   background-color:gray;
+		}
+
+/* CSS comments */
+
+p { 
+  color: green; 
+  /* This is a comment */
+  font-size: 150%;
+}
+
+/* Style Cascade and Inheritance */
+The three main sources of style information that form a cascade are:
+
+- The stylesheet created by the author of the page
+- The browser's default styles
+- Styles specified by the user
+
+/* inheritance: p is child element and body is parent*/
+<html>
+   <head>
+      <style>
+      body {
+         color: green;
+         font-family: Arial;
+      }
+     </style>
+   </head>
+   <body>       
+      <p>
+      This is a text inside the paragraph. 
+      </p>
+   </body>
+</html>
+
+/*The font family property*/
+The HTML: 
+<p class="serif">
+   This is a paragraph shown in serif font.
+</p>
+<p class="sansserif">
+   This is a paragraph shown in sans-serif font.
+</p> 
+<p class="monospace">
+   This is a paragraph shown in monospace font.
+</p> 
+<p class="cursive">
+   This is a paragraph shown in cursive font.
+</p> 
+<p class="fantasy">
+   This is a paragraph shown in fantasy font.
+</p> 
+
+		The CSS:
+		p.serif {
+		   font-family: "Times New Roman", Times, serif;
+		}
+		p.sansserif {
+		   font-family: Helvetica, Arial, sans-serif;
+		}
+		p.monospace {
+		   font-family: "Courier New", Courier, monospace;
+		}
+		p.cursive {
+		   font-family: Florence, cursive;
+		}
+		p.fantasy {
+		   font-family: Blippo, fantasy;
+		}
+
+/*The font size property*/
+The HTML: 
+<p class="small">
+   Paragraph text set to be small
+</p>
+<p class="medium">
+   Paragraph text set to be medium
+</p>
+<p class="large">
+   Paragraph text set to be large
+</p>
+<p class="xlarge">
+   Paragraph text set to be very large
+</p>
+
+		The CSS:
+		p.small {
+		   font-size: small;
+		}
+		p.medium {
+		   font-size: medium;
+		}
+		p.large {
+		   font-size: large;
+		}
+		p.xlarge {
+		   font-size: x-large;
+		}
+	
+/*using pixels or ems to manipulate font size*/
+/*both below entries are the same, because em = pixels / 16*/
+		h1 {
+		   font-size: 20px;
+		}
+
+		h1 {
+		   font-size: 1.25em; 
+		}
+
+/*The font style (typically used for italics), but has three values*/
+The HTML: 
+<p class="normal">This paragraph is normal.</p>
+<p class="italic">This paragraph is italic.</p>
+<p class="oblique">This paragraph is oblique.</p>
+
+		The CSS:
+		p.normal {
+		   font-style: normal;
+		}
+		p.italic {
+		   font-style: italic;
+		}
+		p.oblique {
+		   font-style: oblique;
+		}
+
+/*The font weight property*/
+The HTML: 
+<p class="light">This is a font with a "lighter" weight.</p>
+<p class="bold">This is a font with a "bold" weight.</p>
+<p class="bolder">This is a font with a "bolder" weight.</p>
+
+		The CSS:
+		p.light {   
+		   font-weight: lighter;
+		}
+		p.bold {   
+		   font-weight: bold;
+		}
+		p.bolder {
+		   font-weight: bolder;
+		}
+
+/*The font weight can also be defined as a number*/
+/*400 is the same as normal, and 700 is the same as bold.*/
+/*Ranges from 100 (thin) to 900 (thick)*/
+
+/*The font variant property*/
+The HTML: 
+<p class="normal">Paragraph font variant set to normal.</p>
+<p class="small">Paragraph font variant set to small-caps.</p>
+
+		The CSS:
+		p.normal {
+		   font-variant: normal;
+		}
+		p.small {
+		   font-variant: small-caps;
+		}
+
+/*The colour property*/
+The HTML: 
+<p class="example">The text inside the paragraph is green.</p>
+The text outside the paragraph is black (by default). 
+
+		The CSS:
+		p.example {
+		   color: green;
+		}
+
+/*can also use hexadecimal values and RGB*/
+The HTML: 
+<h1>This is a heading</h1>
+<p class="example">This is a paragraph</p>
+
+		The CSS:
+		h1 {
+		   color: #0000FF;
+		}
+		p.example {
+		   color: rgb(255,0,0);
+		}
+
+/*The text-align Property*/
+<p class="left">This paragraph is aligned to <strong>left.</strong></p>
+<p class="right">This paragraph is aligned to <strong>right.</strong></p>
+<p class="center">This paragraph is aligned to <strong>center.</strong></p>
+
+		p.left {
+		   text-align: left;
+		}
+		p.right {
+		   text-align: right;
+		}
+		p.center {
+		   text-align: center;
+		}
+
+/*The vertical-align Property*/
+<table border="1" cellpadding="2" cellspacing="0" style="height: 150px;">
+  <tr>
+     <td class="top">Top</td>
+     <td class="middle">Middle</td>
+     <td class="bottom">Bottom</td>
+  </tr>
+</table>
+
+		td.top {
+		   vertical-align: top;
+		}
+		td.middle {
+		   vertical-align: middle;
+		}
+		td.bottom {
+		   vertical-align: bottom;
+		}
+
+<p>This is an <span class="baseline">inline text</span> example.</p>
+<p>This is a <span class="sub">sub line text</span> example.</p>
+<p> This is a <span class="super">super line text</span> example.</p>
+<p> This is a <span class="pixel">pixel</span> example.</p>
+
+		span.baseline {
+			vertical-align: baseline;
+		}
+		span.sub {
+			vertical-align: sub;
+		}
+		span.super {
+			vertical-align: super;
+		}
+		span.pixel {
+			vertical-align: -10px;
+		}
+
+/*additional styling needed for div elements*/
+<div class="main">
+   <div class="paragraph">
+   This text is aligned to the middle
+   </div>
+</div>
+
+		.main {
+			height: 150px; width: 400px;
+			background-color: LightSkyBlue;
+			display: inline-table;
+		}
+			.paragraph {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+/*The text-decoration Property */
+<p class="none">This is default style of the text (none).</p>
+<p class="inherit">This text inherits the decoration of the parent.</p>
+<p class="overline">This is overlined text.</p>
+<p class="underline">This is underlined text.</p>
+<p class="line-through">This is lined-through text.</p>
+
+		p.none {
+		   text-decoration: none;
+		}
+		p.inherit {
+		   text-decoration: inherit;
+		}
+		p.overline {
+		   text-decoration: overline;
+		}
+		p.underline {
+		   text-decoration: underline;
+		}
+		p.line-through {
+		   text-decoration: line-through;
+		}
+
+/*The text-indent Property */
+<p>This is an example of 
+<strong>text-indent </strong> property. 
+First line of our text is indented to the right in 60px. 
+Besides pixels you can also use other measurement units, 
+like pt, cm, em, etc. </p>
+
+		p {
+		   text-indent: 60px;
+		}
+
+/*The text-shadow Property*/
+<h1>Text-shadow example</h1>
+
+		h1 {
+		   color: blue;
+		   font-size: 30pt;
+		   text-shadow: 5px 2px 4px grey;
+		}
+		/*5px – the X-coordinate
+		2px – the Y-coordinate
+		4px – the blur radius
+		grey – the color of the shadow*/
+
+/*The text-transform Property*/
+<p class="capitalize">
+    The value capitalize transforms the first 
+    character in each word to uppercase; 
+    all other characters remain unaffected.
+</p>
+
+		p.capitalize {
+		   text-transform: capitalize;
+		}
+
+<p class="uppercase">This value transforms all characters to uppercase.</p>
+<p class="lowercase">This value transforms all characters to lowercase.</p>
+
+		p.uppercase {
+		   text-transform: uppercase;
+		}
+		p.lowercase {
+		   text-transform: lowercase;
+		}
+
+/*The letter-spacing Property*/
+<p class="normal">This paragraph has no additional letter-spacing applied.</p>
+<p class="positive ">This paragraph is letter-spaced at 4px.</p>
+<p class="negative">This paragraph is letter-spaced at -1.5px</p>
+
+		p.normal { 
+		   letter-spacing: normal; 
+		}
+		p.positive { 
+		   letter-spacing: 4px; 
+		}
+		p.negative { 
+			letter-spacing: -1.5px; 
+		} 
+
+/*The word-spacing Property*/
+<p class="normal">This paragraph has no additional word-spacing applied.</p>
+<p class="px">This paragraph is word-spaced at 30px.</p>
+<p class="negative">This paragraph is word-spaced at -5px.</p>
+
+		p.normal { 
+		   word-spacing: normal;
+		}
+		p.px { 
+		   word-spacing: 30px;
+		}
+		p.negative { 
+		   word-spacing: -5px;
+		}
+
+/*The white space Property*/
+<p>
+This paragraph has         multiple spaces      and
+a line break, but it will be ignored, as we used the nowrap value. 
+</p>
+
+		p {
+   white-space: nowrap;
+}
+
+/*the white space values*/
+<p class="pre"> 
+In the markup we have multiple            spaces 
+and a line break. 
+</p>
+<p class="preline"> 
+In the markup we have multiple            spaces 
+and a line break, but in the result multiple spaces are ignored. 
+</p>
+<p class="prewrap"> 
+In the markup we have              multiple 
+spaces and a line break.
+</p>
+
+		p.pre {
+		   white-space: pre;
+		}
+		p.preline {
+		   white-space: pre-line;
+		}
+		p.prewrap {
+		   white-space: pre-wrap;
+		}
+
+
+/*The CSS Box Model
+
+All HTML elements can be considered as boxes. The CSS box model represents the design and layout of the site. It consists of margins, borders, paddings, and the actual content.*/
+
+/* The border property*/
+<p>This is an example of a solid border.</p>
+
+		p {
+		   padding: 10px;    
+		   border: 5px solid green;
+		}
+
+/*border width*/
+<p class="first">
+    Border width of this paragraph is set to 2px.
+</p>
+<p class="second">
+    Border width of this paragraph is set to 5px.
+</p>
+
+		p.first {
+		   padding: 10px;    
+		   border-style: solid;
+		   border-width: 2px;
+		}
+		p.second {
+		   padding: 10px;    
+		   border-style: solid;
+		   border-width: 5px;
+		}
+
+/*border color*/
+<p class="first">
+   Border color has been created using <strong>color name.</strong>
+</p>
+<p class="second">
+   Border color has been created using <strong>Hex values.</strong> 
+</p>
+<p class="third">
+   Border color has been created using <strong>RGB values.</strong> 
+</p>
+
+		p.first {
+		   padding: 10px;
+		   border-style: solid;
+		   border-width: 2px;
+		   border-color: blue;
+		}
+		p.second {
+		   padding: 10px;    
+		   border-style: solid;
+		   border-width: 2px;
+		   border-color: #FF6600;
+		} 
+		p.third {
+		   padding: 10px;    
+		   border-style: solid;
+		   border-width: 2px;
+		   border-color: rgb(0, 153, 0);
+		} 
+
+/*the border style property*/
+<p class="none">This paragraph has no border.</p>
+<p class="dotted">This is a dotted border.</p>
+<p class="dashed">This is a dashed border.</p>
+<p class="double">This is a double border.</p>
+<p class="groove">This is a grooved border.</p>
+<p class="ridge">This is a ridged border.</p>
+<p class="inset">This is an inset border.</p>
+<p class="outset">This is an outset border.</p>
+<p class="hidden">This is a hidden border.</p
+
+		p.none {border-style: none;}
+		p.dotted {border-style: dotted;}
+		p.dashed {border-style: dashed;}
+		p.double {border-style: double;}
+		p.groove {border-style: groove;}
+		p.ridge {border-style: ridge;}
+		p.inset {border-style: inset;}
+		p.outset {border-style: outset;}
+		p.hidden {border-style: hidden;}
+
+		/*NB: can also use border-top-style, border-bottom-style etc...*/
+
+/*CSS width and height, can set all border properties in one declaration*/
+<div>The total width and height of this element is 100px.</div>
+
+		div {
+		   border: 5px solid green;    
+		   width: 90px;
+		   height: 90px;
+		}
+
+/*width and height can also be assigned using %*/
+<div>The total width of this element is <strong>100%</strong> and the total height is <strong>100px</strong> .</div>
+
+		div {
+		   border: 5px solid green;    
+		   width: 100%;
+		   height: 90px;
+		}
+
+/*minimum and maximum sizes*/
+/*useful when you want the width and height of an image or paragraph to be fixed, despite changes in browsers etc*/
+<p class="first">The <strong>minimum height </strong> of this paragraph is set to 100px.</p>
+<p class="second">The<strong> maximum width </strong> of this paragraph is set to 100px.</p>
+
+		p.first {
+		   border: 5px solid green;    
+		   min-height: 100px;       
+		}
+		p.second {
+		   border: 5px solid green;    
+		   max-width: 100px;       
+		}
+
+/*The background-color Property*/
+<p>The background color of this page is set to LightSkyBlue.</p>
+
+		body {
+			background-color: #87CEFA;
+		}
+
+/*In the example below, the body, h1, and p elements are assigned different background colors: */
+<h1>This is a heading</h1>
+<p>This is a paragraph</p>
+
+		body {
+		   background-color: #C0C0C0;
+		}
+		h1 {
+		   background-color: rgb(135,206,235);
+		}
+		p {
+		   background-color: LightGreen;
+		}
+
+/*The background-image Property*/
+body {
+   background-image: url("css_logo.png");
+   background-color: #e9e9e9;	/*background-color used because the image is transparent*/
+}
+
+/*By default, a background-image is placed at the top-left corner of an element, and is repeated both vertically and horizontally to cover the entire element.*/
+
+<p>This paragraph has a background image.</p>
+
+		p {
+		   padding: 30px;
+		   background-image: url("green_photo.jpg");
+		   color: white;   
+		}
+
+/*The background-repeat Property*/
+body {
+   background-image: url("css_logo.png");
+   background-repeat: repeat-x;  /*repeat-x will repeat a background image horizonally*/
+}
+
+	body {
+	   background-image: url("css_logo.png");
+	   background-repeat: repeat-y;
+	}
+
+/*if image if to be shown only once then use no-repeat*/
+/*When you set the background-repeat property to inherit, it will take the same specified value as the property for the element's parent.*/
+body {
+   background-image: url("css_logo.png");
+   background-repeat: repeat-x;
+}
+p {
+   background-image: url("css_logo.png");
+   background-repeat: inherit;
+   margin-top: 100px;
+   padding: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
